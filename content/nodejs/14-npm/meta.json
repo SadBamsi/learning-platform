@@ -1,0 +1,6 @@
+{
+  "title": "npm, package.json, semver и безопасность зависимостей",
+  "summary": "dependencies против devDependencies, semver-диапазоны, lock-файл и npm ci, node_modules, workspaces, supply chain-атаки.",
+  "level": "middle",
+  "frequency": 2
+}

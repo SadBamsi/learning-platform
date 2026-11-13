@@ -1,0 +1,6 @@
+{
+  "title": "Обработка ошибок и graceful shutdown",
+  "summary": "Операционные и программные ошибки, uncaughtException/unhandledRejection, коды завершения, корректная остановка сервиса по SIGTERM.",
+  "level": "senior",
+  "frequency": 3
+}

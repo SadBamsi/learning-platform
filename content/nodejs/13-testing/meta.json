@@ -1,0 +1,6 @@
+{
+  "title": "Тестирование Node.js-приложений",
+  "summary": "Пирамида тестов, unit против integration, моки и стабы, node:test, тестирование HTTP-API, flaky-тесты и изоляция.",
+  "level": "middle",
+  "frequency": 2
+}

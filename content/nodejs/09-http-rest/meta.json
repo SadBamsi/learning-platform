@@ -1,0 +1,6 @@
+{
+  "title": "HTTP, REST API и middleware",
+  "summary": "Методы и статусы HTTP, идемпотентность, дизайн REST, middleware-цепочка Express, пагинация, Express против Fastify.",
+  "level": "middle",
+  "frequency": 3
+}

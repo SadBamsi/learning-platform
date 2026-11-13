@@ -4,6 +4,7 @@ import remarkGfm from "remark-gfm";
 import { getCourse, getLessons, getLessonContent } from "@/lib/content";
 import { LessonTabs } from "@/components/LessonTabs";
 import { Quiz } from "@/components/Quiz";
+import { LessonMeta } from "@/components/LessonMeta";
 
 export default async function LessonPage({
   params,
@@ -14,15 +15,17 @@ export default async function LessonPage({
   const lessons = getLessons(course);
   const meta = lessons.find((l) => l.slug === lesson);
   if (!getCourse(course) || !meta) notFound();
-  const { theory, practice, quiz } = getLessonContent(course, lesson);
+  const { theory, practice, solutions, quiz } = getLessonContent(course, lesson);
   const md = (s: string) => <ReactMarkdown remarkPlugins={[remarkGfm]}>{s}</ReactMarkdown>;
 
   return (
     <>
       <h1>{meta.title}</h1>
+      <LessonMeta lesson={meta} />
       <LessonTabs
         theory={md(theory)}
         practice={md(practice)}
+        solutions={solutions ? md(solutions) : undefined}
         quiz={<Quiz id={`${course}/${lesson}`} questions={quiz} />}
       />
     </>

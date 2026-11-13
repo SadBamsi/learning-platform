@@ -4,7 +4,16 @@ import path from "node:path";
 const ROOT = path.join(process.cwd(), "content");
 
 export type Course = { slug: string; title: string; description: string };
-export type Lesson = { slug: string; title: string; summary: string };
+export type Level = "middle" | "senior";
+export type Lesson = {
+  slug: string;
+  title: string;
+  summary: string;
+  /** Минимальный уровень позиции, на котором тему спрашивают. */
+  level?: Level;
+  /** Как часто тема встречается на собеседованиях: 3 — почти всегда, 1 — иногда. */
+  frequency?: 1 | 2 | 3;
+};
 export type QuizQuestion = {
   question: string;
   options: string[];
@@ -42,9 +51,11 @@ export function getLessons(course: string): Lesson[] {
 
 export function getLessonContent(course: string, lesson: string) {
   const dir = path.join(ROOT, course, lesson);
+  const solutionsPath = path.join(dir, "solutions.md");
   return {
     theory: fs.readFileSync(path.join(dir, "theory.md"), "utf8"),
     practice: fs.readFileSync(path.join(dir, "practice.md"), "utf8"),
+    solutions: fs.existsSync(solutionsPath) ? fs.readFileSync(solutionsPath, "utf8") : null,
     quiz: readJson<QuizQuestion[]>(path.join(dir, "quiz.json")),
   };
 }

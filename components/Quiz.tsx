@@ -2,6 +2,17 @@
 import { useState } from "react";
 import type { QuizQuestion } from "@/lib/content";
 
+/** Превращает `код` в <code>, остальной текст оставляет как есть (без dangerouslySetInnerHTML). */
+function Inline({ text }: { text: string }) {
+  return (
+    <>
+      {text.split(/(`[^`]+`)/g).map((part, i) =>
+        part.startsWith("`") && part.endsWith("`") && part.length > 2 ? <code key={i}>{part.slice(1, -1)}</code> : part
+      )}
+    </>
+  );
+}
+
 export function Quiz({ id, questions }: { id: string; questions: QuizQuestion[] }) {
   const [picked, setPicked] = useState<(number | null)[]>(questions.map(() => null));
   const [checked, setChecked] = useState(false);
@@ -23,7 +34,7 @@ export function Quiz({ id, questions }: { id: string; questions: QuizQuestion[] 
       {questions.map((q, i) => (
         <div className="q" key={i}>
           <strong>
-            {i + 1}. {q.question}
+            {i + 1}. <Inline text={q.question} />
           </strong>
           {q.options.map((o, j) => (
             <label key={j}>
@@ -34,13 +45,13 @@ export function Quiz({ id, questions }: { id: string; questions: QuizQuestion[] 
                 checked={picked[i] === j}
                 onChange={() => setPicked(picked.map((p, k) => (k === i ? j : p)))}
               />{" "}
-              {o}
+              <Inline text={o} />
             </label>
           ))}
           {checked && (
             <p className={picked[i] === q.answer ? "ok" : "bad"}>
-              {picked[i] === q.answer ? "Верно." : `Неверно. Правильный ответ: ${q.options[q.answer]}.`}{" "}
-              {q.explanation}
+              {picked[i] === q.answer ? "Верно." : <>Неверно. Правильный ответ: <Inline text={q.options[q.answer]} />.</>}{" "}
+              {q.explanation && <Inline text={q.explanation} />}
             </p>
           )}
         </div>

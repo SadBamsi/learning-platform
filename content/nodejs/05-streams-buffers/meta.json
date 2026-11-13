@@ -1,0 +1,6 @@
+{
+  "title": "Streams, Buffer и backpressure",
+  "summary": "Зачем нужны потоки, 4 типа streams, backpressure, pipeline против pipe, работа с Buffer.",
+  "level": "middle",
+  "frequency": 2
+}

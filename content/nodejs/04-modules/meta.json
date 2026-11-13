@@ -1,0 +1,6 @@
+{
+  "title": "Модули: CommonJS против ES Modules",
+  "summary": "Чем отличаются require и import, как работает кэш и циклические зависимости, interop CJS↔ESM.",
+  "level": "middle",
+  "frequency": 3
+}

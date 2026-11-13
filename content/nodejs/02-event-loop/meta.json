@@ -1,0 +1,6 @@
+{
+  "title": "Event loop: фазы, микрозадачи и порядок выполнения",
+  "summary": "Фазы цикла, nextTick vs Promise vs setImmediate vs setTimeout, как не заблокировать цикл.",
+  "level": "middle",
+  "frequency": 3
+}
