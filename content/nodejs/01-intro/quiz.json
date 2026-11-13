@@ -1,0 +1,25 @@
+[
+  {
+    "question": "Какой движок исполняет JavaScript в Node.js?",
+    "options": ["SpiderMonkey", "V8", "Chakra", "libuv"],
+    "answer": 1,
+    "explanation": "V8 — движок Chrome; libuv отвечает за асинхронный ввод-вывод."
+  },
+  {
+    "question": "Сколько потоков выполняет ваш JavaScript-код в Node.js по умолчанию?",
+    "options": ["Один", "По одному на каждый запрос", "Равно числу ядер CPU", "Два"],
+    "answer": 0,
+    "explanation": "JS-код идёт в одном потоке, ввод-вывод выносится в libuv."
+  },
+  {
+    "question": "Что выполняется раньше остальных после текущего синхронного кода?",
+    "options": ["setTimeout(..., 0)", "setImmediate", "process.nextTick", "fs.readFile callback"],
+    "answer": 2,
+    "explanation": "nextTick-очередь обрабатывается раньше промисов и фаз цикла."
+  },
+  {
+    "question": "Почему на сервере лучше избегать readFileSync?",
+    "options": ["Он не работает с UTF-8", "Он блокирует event loop", "Он устарел и удалён", "Он читает только маленькие файлы"],
+    "answer": 1
+  }
+]
