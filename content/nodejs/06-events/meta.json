@@ -1,0 +1,6 @@
+{
+  "title": "EventEmitter и событийная модель",
+  "summary": "Как работает EventEmitter, синхронность emit, событие error, утечки слушателей, реализация своего emitter.",
+  "level": "middle",
+  "frequency": 2
+}

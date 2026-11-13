@@ -1,0 +1,6 @@
+{
+  "title": "Асинхронность: колбэки, промисы, async/await",
+  "summary": "Как устроены промисы, параллельность vs последовательность, Promise.all/allSettled/race/any, обработка ошибок и отмена.",
+  "level": "middle",
+  "frequency": 3
+}

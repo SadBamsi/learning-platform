@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getCourse, getLessons } from "@/lib/content";
 import { LessonBadge } from "@/components/LessonBadge";
+import { LessonMeta } from "@/components/LessonMeta";
 
 export default async function CoursePage({ params }: { params: Promise<{ course: string }> }) {
   const { course } = await params;
@@ -18,6 +19,7 @@ export default async function CoursePage({ params }: { params: Promise<{ course:
             {i + 1}. {l.title}
           </strong>
           <LessonBadge id={`${course}/${l.slug}`} />
+          <LessonMeta lesson={l} />
           <small>{l.summary}</small>
         </Link>
       ))}

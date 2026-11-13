@@ -1,0 +1,6 @@
+{
+  "title": "Масштабирование: worker_threads, cluster, child_process",
+  "summary": "Как использовать все ядра CPU, чем отличаются потоки и процессы, горизонтальное масштабирование и stateless-сервисы.",
+  "level": "senior",
+  "frequency": 3
+}

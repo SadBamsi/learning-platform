@@ -1,0 +1,6 @@
+{
+  "title": "Безопасность Node.js-приложений: XSS, CSRF, CORS, инъекции",
+  "summary": "OWASP-угрозы, которые спрашивают чаще всего: SQL-инъекции, XSS, CSRF, CORS, path traversal, SSRF, prototype pollution, ReDoS, rate limiting.",
+  "level": "senior",
+  "frequency": 3
+}
