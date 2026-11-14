@@ -1,0 +1,6 @@
+{
+  "title": "TypeScript в React: пропсы, хуки, события и дженерики",
+  "summary": "Как типизировать пропсы и children, события, useState/useRef/useReducer/useContext, generic-компоненты и union-пропсы, чем заменить React.FC и JSX.Element, и почему типы не заменяют валидацию данных.",
+  "level": "middle",
+  "frequency": 2
+}

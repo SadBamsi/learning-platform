@@ -1,0 +1,6 @@
+{
+  "title": "Concurrent-рендеринг: useTransition, useDeferredValue и Suspense",
+  "summary": "Срочные и несрочные обновления, как useTransition и useDeferredValue сохраняют отзывчивость, как Suspense и use() описывают загрузку и почему переходы не показывают fallback повторно.",
+  "level": "senior",
+  "frequency": 2
+}

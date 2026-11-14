@@ -1,0 +1,6 @@
+{
+  "title": "Производительность: как искать и устранять тормоза",
+  "summary": "Измерения (Profiler, DevTools, Web Vitals), лишние рендеры, виртуализация списков, code splitting с lazy/Suspense, высокочастотные события и типичный чек-лист оптимизации.",
+  "level": "senior",
+  "frequency": 3
+}

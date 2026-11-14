@@ -1,0 +1,6 @@
+{
+  "title": "Формы и Actions: controlled/uncontrolled, useActionState, useOptimistic",
+  "summary": "Управляемые и неуправляемые поля, валидация, FormData, form action в React 19, useActionState, useFormStatus, useOptimistic и сброс формы после отправки.",
+  "level": "middle",
+  "frequency": 2
+}
