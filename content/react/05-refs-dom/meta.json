@@ -1,0 +1,6 @@
+{
+  "title": "Refs и DOM: useRef, ref как проп, useImperativeHandle",
+  "summary": "Чем ref отличается от state, как получить DOM-узел, callback ref с cleanup, forwardRef и ref-проп в React 19, useImperativeHandle и чего нельзя делать с ref во время рендера.",
+  "level": "middle",
+  "frequency": 2
+}

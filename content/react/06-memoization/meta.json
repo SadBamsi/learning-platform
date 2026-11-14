@@ -1,0 +1,6 @@
+{
+  "title": "Мемоизация: memo, useMemo, useCallback и React Compiler",
+  "summary": "Когда memo реально пропускает рендер, почему инлайн-функции его ломают, когда нужны useMemo/useCallback, чем их можно заменить и что меняет React Compiler.",
+  "level": "middle",
+  "frequency": 3
+}

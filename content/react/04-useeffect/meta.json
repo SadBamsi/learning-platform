@@ -1,0 +1,6 @@
+{
+  "title": "useEffect: зависимости, cleanup и гонки запросов",
+  "summary": "Эффект как синхронизация с внешней системой, массив зависимостей, cleanup, двойной запуск в StrictMode, race condition при fetch и когда эффект вообще не нужен.",
+  "level": "middle",
+  "frequency": 3
+}

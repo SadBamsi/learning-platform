@@ -1,0 +1,90 @@
+[
+  {
+    "question": "Каким типом лучше описать `children`, если можно передать что угодно, что рендерится?",
+    "options": [
+      "`any`",
+      "`ReactNode`",
+      "`string`",
+      "`ReactElement`"
+    ],
+    "answer": 1,
+    "explanation": "`ReactNode` включает строки, числа, элементы, массивы, `null`, `false`. `ReactElement` — только элементы."
+  },
+  {
+    "question": "Почему `useState([])` в TypeScript часто приводит к ошибке при `setItems([1, 2, 3])`?",
+    "options": [
+      "Тип выводится как `never[]`; нужен дженерик `useState<number[]>([])`",
+      "Массивы нельзя хранить в состоянии",
+      "`setItems` принимает только функции",
+      "TypeScript не поддерживает массивы в хуках"
+    ],
+    "answer": 0,
+    "explanation": "Из пустого массива тип элементов не выводится, поэтому указывайте дженерик."
+  },
+  {
+    "question": "Как типизировать ref на DOM-элемент?",
+    "options": [
+      "`useRef(null)` — тип выведется сам",
+      "`useRef<any>()`",
+      "`useState<HTMLInputElement>()`",
+      "`useRef<HTMLInputElement>(null)`"
+    ],
+    "answer": 3,
+    "explanation": "`ref.current` имеет тип `HTMLInputElement | null`, поэтому обращение требует проверки (`ref.current?.focus()`)."
+  },
+  {
+    "question": "Как задать пропсы так, чтобы при `kind=\"error\"` был обязателен `error`, а при `kind=\"success\"` — `message`?",
+    "options": [
+      "Два необязательных поля `error?` и `message?`",
+      "Один `any`",
+      "Дискриминируемое объединение типов с общим полем `kind`",
+      "Перегрузка `useState`"
+    ],
+    "answer": 2,
+    "explanation": "Union исключает невозможные комбинации, а TypeScript сужает тип внутри веток по `kind`."
+  },
+  {
+    "question": "Как расширить пропсы нативной кнопки собственными полями?",
+    "options": [
+      "`HTMLButton & Props`",
+      "`ComponentProps<\"button\"> & { variant: \"primary\" | \"danger\" }`",
+      "`class Button extends HTMLButtonElement`",
+      "`React.Button<Props>`"
+    ],
+    "answer": 1,
+    "explanation": "`ComponentProps<\"button\">` включает все нативные атрибуты и правильные типы событий (а в React 19 — и `ref`)."
+  },
+  {
+    "question": "Что произойдёт при `function A(): JSX.Element` в проекте с `@types/react` 19?",
+    "options": [
+      "Ошибка «Cannot find namespace 'JSX'»: используйте `React.JSX.Element`, `ReactElement` или вывод типа",
+      "Всё работает без изменений",
+      "Компонент не отрендерится",
+      "Предупреждение только в рантайме"
+    ],
+    "answer": 0,
+    "explanation": "Глобальное пространство имён `JSX` убрано из типов React 19."
+  },
+  {
+    "question": "Зачем в `switch` по `action.type` добавляют ветку `default: assertNever(action)`?",
+    "options": [
+      "Для ускорения работы редьюсера",
+      "Чтобы отключить строгие проверки",
+      "Для логирования в рантайме",
+      "Чтобы компилятор сообщил об необработанном новом действии"
+    ],
+    "answer": 3,
+    "explanation": "В `default` тип `action` сужается до `never`; если появилась необработанная ветка, это ошибка компиляции."
+  },
+  {
+    "question": "Почему `const user = (await res.json()) as User` небезопасно?",
+    "options": [
+      "`as` вызывает исключение в рантайме",
+      "`json()` не возвращает Promise",
+      "Типы стираются при компиляции; `as` не проверяет данные, формат ответа может отличаться",
+      "TypeScript запрещает `as`"
+    ],
+    "answer": 2,
+    "explanation": "Нужна валидация: type guard или схема (`zod`), которая даёт и проверку, и тип."
+  }
+]

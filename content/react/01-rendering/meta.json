@@ -1,0 +1,6 @@
+{
+  "title": "Рендеринг: Virtual DOM, reconciliation и key",
+  "summary": "Фазы render и commit, когда компонент перерисовывается, как React сравнивает деревья, зачем нужен key и почему index — плохой ключ.",
+  "level": "middle",
+  "frequency": 3
+}

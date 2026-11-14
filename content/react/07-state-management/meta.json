@@ -1,0 +1,6 @@
+{
+  "title": "Состояние приложения: Context, Redux/Zustand и серверное состояние",
+  "summary": "Какие бывают виды состояния, чем плох Context для часто меняющихся данных, когда нужен стор (Redux Toolkit, Zustand) и почему данные с сервера лучше держать в TanStack Query.",
+  "level": "middle",
+  "frequency": 3
+}

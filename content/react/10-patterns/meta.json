@@ -1,0 +1,6 @@
+{
+  "title": "Паттерны: кастомные хуки, композиция и compound components",
+  "summary": "Как выносить логику в кастомные хуки, чем композиция лучше наследования и флагов-пропсов, compound components, controlled/uncontrolled и почему HOC и render props уступили хукам.",
+  "level": "middle",
+  "frequency": 2
+}
